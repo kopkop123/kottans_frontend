@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Pair Game</title>
+
+    <style>
+        .title {
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(3, 100px);
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .cards__item.open {
+            transform: rotateY(180deg);
+        }
+
+        .cards__front, .cards__back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .cards__front {
+            z-index: 2;
+            transform: rotateY(0deg);
+            background: rgb(255,183,107); /* Old browsers */
+            background: -moz-linear-gradient(45deg, rgba(255,183,107,1) 0%, rgba(255,167,61,1) 50%, rgba(255,124,0,1) 51%, rgba(255,127,4,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(45deg, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(45deg, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+
+        .cards__back {
+            transform: rotateY(180deg);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            font-size: 85px;
+        }
+
+        .cards__item {
+            border-radius: 5px;
+            border: 2px solid black;
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Memory Pair Game</h1>
+
+    <section class="cards" id="cards"></section>
+
+
+
+    <script>
+        let letters = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
+        let memoryValues = [];
+        let memoryTile = [];
+        let tilesFlipped = 0;
+
+        Array.prototype.memoryTileShuffle = function() {
+            var i = this.length, j, temp;
+
+            while(--i > 0) {
+                j = Math.floor(Math.random() * (i + 1));
+                temp = this[j];
+                this[j] = this[i];
+                this[i] = temp;
+            }
+        }
+
+        function newCards() {
+            tilesFlipped = 0;
+
+            var output = '';
+
+            letters.memoryTileShuffle();
+
+            for(var i = 0; i < letters.length; i++) {
+                output += '<div class="cards__item" id="cards__item__' + i + '" onclick="memmoryFlipTile(this,\'' + letters[i] + '\')"><div class="cards__front"></div><div class="cards__back">' + letters[i] + '</div></div>';
+            }
+
+            document.getElementById('cards').innerHTML = output;
+        }
+
+        function memmoryFlipTile(tile, val) {
+            if(memoryValues.length < 2) {
+
+                tile.className += " open";
+
+                if(memoryValues.length == 0) {
+                    memoryValues.push(val);
+                    memoryTile.push(tile.id);
+                } else if(memoryValues.length == 1) {
+                    memoryValues.push(val);
+                    memoryTile.push(tile.id);
+
+                    if(memoryValues[0] == memoryValues[1]) {
+                        tilesFlipped += 2;
+
+                        memoryValues = [];
+                        memoryTile = [];
+
+                        if(tilesFlipped == letters.length) {
+                            alert("You Win!!!! \n Generating new game");
+                            document.getElementById('cards').innerHTML = "";
+                            newCards();
+                        }
+                    } else {
+                        function flip2Back() {
+                            var tile_1 = document.getElementById(memoryTile[0]);
+                            var tile_2 = document.getElementById(memoryTile[1]);
+
+                            tile_1.classList.remove("open");
+                            tile_2.classList.remove("open");
+
+                            memoryValues = [];
+                            memoryTile = [];
+                        }
+
+                        setTimeout(flip2Back, 700);
+                    }
+                }
+            }
+        }
+
+        newCards();
+    </script>
+</body>
+</html>
