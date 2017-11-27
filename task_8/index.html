@@ -57,6 +57,10 @@
             transform-style: preserve-3d;
             position: relative;
         }
+
+        .cards__item.hide {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -109,16 +113,23 @@
                     memoryValues.push(val);
                     memoryTile.push(tile.id);
 
+
                     if(memoryValues[0] == memoryValues[1]) {
                         tilesFlipped += 2;
+                        var tile1 = document.getElementById(memoryTile[0]);
+                        tile1.className += " hide";
+                        var tile2 = document.getElementById(memoryTile[1]);
+                        tile2.className += " hide";
 
                         memoryValues = [];
                         memoryTile = [];
 
                         if(tilesFlipped == letters.length) {
-                            alert("You Win!!!! \n Generating new game");
-                            document.getElementById('cards').innerHTML = "";
-                            newCards();
+                            setTimeout(function() {
+                                alert("You Win!!!! \n Generating new game");
+                                document.getElementById('cards').innerHTML = "";
+                                newCards();
+                            }, 1000);
                         }
                     } else {
                         function flip2Back() {
