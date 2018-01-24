@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container__top">
+            <button type="button" class="c-button">
+                <i class="fas fa-long-arrow-alt-left"></i> Go back
+            </button>
+
+            <a href="#">
+                <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="container__logo">
+                    <path d="M169.9 172c-18 17.7-42.7 28.6-69.9 28.6-55.2 0-100-44.9-100-100.3S44.8 0 100 0s100 44.9 100 100.3c0 28-11.5 53.4-29.9 71.6l-15.3-38.4c5.9-9.7 9.3-21.2 9.3-33.4 0-35.6-28.8-64.5-64.3-64.5s-64.3 28.9-64.3 64.5 28.8 64.5 64.3 64.5c10.9 0 21.1-2.7 30.1-7.5l40 14.9zm-69-42.7c15.5 0 28.1-12.6 28.1-28.2s-12.6-28.2-28.1-28.2-28.1 12.6-28.1 28.2 12.6 28.2 28.1 28.2z"/>
+                </svg>
+            </a>
+
+            <button type="button" class="c-button">
+                <i class="fas fa-user"></i> Sign in
+            </button>
+        </div>
+
+        <div class="container__body">
+            <form class="form">
+                <div class="order">
+                    <div class="order__details">
+                        <div>
+                            <div class="order__title">
+                                <i class="fas fa-clipboard"></i> Your order
+                            </div>
+
+                            <div class="order__information">
+                                <div class="order__information__item">
+                                    <div class="order__information__title">Items</div>
+                                    <div class="order__information__description">2 documents</div>
+                                </div>
+
+                                <div class="order__information__item">
+                                    <div class="order__information__title">Details</div>
+                                    <div class="order__information__description">2 languages</div>
+                                </div>
+
+                                <div class="order__information__item">
+                                    <div class="order__information__title">Price</div>
+                                    <div class="order__information__description">$ 696</div>
+                                </div>
+
+                                <div class="order__information__item">
+                                    <div class="order__information__title">Delivery</div>
+                                    <div class="order__information__description">48 hours*</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order__buttons">
+                            <button type="submit" class="c-button c-button--order">Place order</button>
+
+                            <button type="button" class="c-button c-button--print">Print a quote</button>
+                        </div>
+                    </div>
+
+                    <div class="order__help">
+                        <div class="order__title">
+                            <i class="far fa-life-ring"></i> Help center
+                        </div>
+
+                        <address class="order__address">
+                            If you need assistance while placing your order,
+                            contact one of our beloved Project
+                            Manager by phone or email.
+
+                            <div class="order__address__inner">
+                                <a class="order__address__link" href="tel:9710555555">+971 (0) 555 555</a>
+                                <a class="order__address__link" href="mailto:help@qtest.com">help@qtest.com</a>
+                            </div>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="container__title">
+                    <h1>Select what you want to translate</h1>
+                </div>
+
+                <div class="translate-choice">
+                    <label class="translate-choice__item">
+                        <input type="radio" name="document" hidden>
+                        <div class="translate-choice__item__inner">
+                            <img src="img/website.png" alt="Website" width="84">
+                            Website
+                        </div>
+                    </label>
+
+                    <label class="translate-choice__item">
+                        <input type="radio" name="document" hidden checked>
+                        <div class="translate-choice__item__inner">
+                            <img src="img/documents.png" alt="Documents" width="84">
+                            Documents
+                        </div>
+                    </label>
+
+                    <label class="translate-choice__item">
+                        <input type="radio" name="document" hidden>
+                        <div class="translate-choice__item__inner">
+                            <img src="img/social.png" alt="Social" width="84">
+                            Social Account
+                        </div>
+                    </label>
+                </div>
+
+                <article class="upload">
+                    <h2 class="form__title" data-count="1">Upload your documents <span class="form__title--small">(Doc, Docx, Text, PDF, Markdown)</span></h2>
+
+                    <div class="upload__inner">
+                        <label class="upload__input">
+                            <input type="file" hidden> Upload a new file
+                        </label>
+
+                        <div class="upload__files">
+                            <div class="upload__files__cell upload__files__header">File name</div>
+                            <div class="upload__files__cell upload__files__header">File size</div>
+                            <div class="upload__files__cell upload__files__header">Number of words</div>
+                            <div class="upload__files__cell upload__files__header upload__files__remove">Remove</div>
+
+                            <div class="upload__files__cell"><i class="fas fa-file-alt"></i> business_operations.docx</div>
+                            <div class="upload__files__cell">78kb</div>
+                            <div class="upload__files__cell">842</div>
+                            <div class="upload__files__cell upload__files__remove"><button type="button" class="c-button__remove"><i class="fas fa-trash"></i></button></div>
+
+                            <div class="upload__files__cell"><i class="fas fa-file-alt"></i> business_financial.docx</div>
+                            <div class="upload__files__cell">26kb</div>
+                            <div class="upload__files__cell">2,326</div>
+                            <div class="upload__files__cell upload__files__remove"><button type="button" class="c-button__remove"><i class="fas fa-trash"></i></button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="language">
+                    <h2 class="form__title" data-count="2">Choose your languages pairings</h2>
+
+                    <div class="language__row">
+                        <div class="language__title language__cell">From</div>
+                        <div class="language__cell">
+                            <div class="language__select">
+                                <select class="language__select--hide">
+                                    <option>English</option>
+                                    <option>Arabic</option>
+                                    <option>Kurdish</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="language__row">
+                        <div class="language__title language__cell">To</div>
+                        <div class="language__cell">
+                            <div class="language__select">
+                                <select class="language__select--hide">
+                                    <option>Arabic</option>
+                                    <option>English</option>
+                                    <option>Kurdish</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="language__cell">
+                            <div class="language__select">
+                                <select class="language__select--hide">
+                                    <option>Kurdish</option>
+                                    <option>Arabic</option>
+                                    <option>English</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="c-button__remove c-button__remove--language"><i class="fas fa-trash"></i></button>
+                        </div>
+
+                        <div class="language__cell">
+                            <button type="button" class="c-button__add"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="combine-wrapper">
+                    <article class="tone">
+                        <h2 class="form__title" data-count="3">Select your desired tone</h2>
+
+                        <div class="tone__inner">
+                            <label class="tone__item">
+                                <input type="radio" name="tone" hidden>
+                                <div class="tone__item__inner">
+                                    <i class="fas fa-comments"></i>
+                                    Friendly / Casual
+                                </div>
+                            </label>
+
+                            <label class="tone__item">
+                                <input type="radio" name="tone" hidden checked>
+                                <div class="tone__item__inner">
+                                    <i class="fas fa-suitcase"></i>
+                                    Corporate / Pro
+                                </div>
+                            </label>
+
+                            <label class="tone__item">
+                                <input type="radio" name="tone" hidden>
+                                <div class="tone__item__inner">
+                                    <i class="fas fa-bullhorn"></i>
+                                    Media / Formal
+                                </div>
+                            </label>
+                        </div>
+                    </article>
+
+                    <article class="urgent">
+                        <h2 class="form__title" data-count="4">Tell us how urgent this job is</h2>
+
+                        <div class="urgent__range">
+                            <input class="urgent__input" type="range" min="0" max="100" step="1" value="50">
+
+                            <div class="urgent__breakpoints">
+                                <span>I got time</span>
+                                <span class="urgent__breakpoints--highlight">Average</span>
+                                <span>Yesterday</span>
+                            </div>
+                        </div>
+
+                        <legend class="urgent__info">
+                            <h3><i class="fas fa-info-circle"></i> Timeline Info</h3>
+                            <p class="urgent__text">
+                                With an <span class="urgent__breakpoints--highlight">AVERAGE</span> timeline set up, our expert translator can take a reasonable amount of time perfecting your translation
+                            </p>
+                        </legend>
+                    </article>
+                </div>
+
+                <article class="payment">
+                    <h2 class="form__title" data-count="5">Sign up and choose a payment method</h2>
+
+                    <fieldset class="payment__fields">
+                        <legend class="payment__signin">Already have an account with us? <a href="#">Sign In</a>.</legend>
+
+                        <div class="payment__row">
+                            <label class="payment__group">
+                                <span class="payment__label">Full name</span>
+                                <input class="payment__field" type="text" required value="Mathieu Mayer" pattern="^[a-zA-Z\s]+$">
+                                <div class="payment__check"></div>
+                            </label>
+                        </div>
+
+                        <div class="payment__row">
+                            <label class="payment__group">
+                                <span class="payment__label">Email adress</span>
+                                <input class="payment__field" type="mail" required value="mathieu.mm@me.com">
+                                <div class="payment__check"></div>
+                            </label>
+
+                            <label class="payment__group">
+                                <span class="payment__label">Choose a password</span>
+                                <input class="payment__field payment__field--password" type="password" required value="123456789" pattern="[0-9]{10,30}">
+                                <div class="payment__check"></div>
+                            </label>
+                        </div>
+
+                        <div class="payment__row">
+                            <label class="payment__item">
+                                <input type="radio" name="payment" hidden checked>
+                                <div class="payment__item__inner">
+                                    <img src="img/visa.png" alt="Visa">
+                                </div>
+                            </label>
+
+                            <label class="payment__item">
+                                <input type="radio" name="payment" hidden>
+                                <div class="payment__item__inner">
+                                    <img src="img/paypal.png" alt="PayPal">
+                                </div>
+                            </label>
+
+                            <label class="payment__item">
+                                <input type="radio" name="payment" hidden>
+                                <div class="payment__item__inner">
+                                    <img src="img/amazon.png" alt="Amazon.com">
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="payment__row">
+                            <label class="payment__group">
+                                <span class="payment__label">Card number</span>
+                                <input class="payment__field payment__field--card" type="text">
+                            </label>
+
+                            <label class="payment__group">
+                                <span class="payment__label">Expiry date</span>
+                                <input class="payment__field payment__field--date" type="date" placeholder="DD/MM/YYYY">
+                            </label>
+
+                            <label class="payment__group">
+                                <span class="payment__label">Code</span>
+                                <input class="payment__field payment__field--code" type="text">
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="payment__footer">
+                        <label class="payment__terms">
+                            <input type="checkbox">
+                            I agree to the <a href="#">Terms & Conditions</a>
+                        </label>
+
+                        <button type="submit" class="c-button c-button--order">Place order</button>
+
+                        <button type="button" class="c-button c-button--print">Print a quote</button>
+                    </div>
+                </article>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <h3 class="footer__title">
+                        <i class="far fa-heart"></i> What we do
+                    </h3>
+
+                    <div class="footer__info footer__info--italic">
+                        We provide a full range of language services including content development, document, website and social media accounts translations.
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        <i class="far fa-compass"></i> Our main office
+                    </h3>
+
+                    <div class="footer__info footer__info--address">
+                        Dubai, UAE<br>
+                        P.O. Box: 502735<br>
+                        Phone: <a class="footer__phone" href="tel:+971(0)44278128">+971(0)44278128</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        <i class="fas fa-share-alt"></i> Connect with us
+                    </h3>
+
+                    <div class="footer__info">
+                        <a class="footer__social" href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a class="footer__social" href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a class="footer__social" href="#"><i class="fab fa-linkedin-in"></i> Linkedin</a>
+                    </div>
+                </div>
+
+                <a href="#">
+                    <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="footer__logo">
+                        <path d="M169.9 172c-18 17.7-42.7 28.6-69.9 28.6-55.2 0-100-44.9-100-100.3S44.8 0 100 0s100 44.9 100 100.3c0 28-11.5 53.4-29.9 71.6l-15.3-38.4c5.9-9.7 9.3-21.2 9.3-33.4 0-35.6-28.8-64.5-64.3-64.5s-64.3 28.9-64.3 64.5 28.8 64.5 64.3 64.5c10.9 0 21.1-2.7 30.1-7.5l40 14.9zm-69-42.7c15.5 0 28.1-12.6 28.1-28.2s-12.6-28.2-28.1-28.2-28.1 12.6-28.1 28.2 12.6 28.2 28.1 28.2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
